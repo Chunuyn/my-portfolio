@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animator Portfolio | [Tên Của Bạn]</title>
+    <meta name="description" content="Portfolio chuyên nghiệp của 3D Character Animator chuyên về diễn xuất nhân vật và vật lý chuyển động.">
+    
+    <!-- Scripts & Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-card {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(79, 172, 254, 0.15);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #1a1a1a;
+        }
+
+        .video-container iframe, .video-container div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: #4facfe;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4facfe;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-800 tracking-tighter hover:opacity-80 transition-opacity uppercase">
+                [TÊN <span class="text-blue-500">BẠN]</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="nav-link">Trang chủ</a>
+                <a href="#showreel" class="nav-link">Showreel</a>
+                <a href="#projects" class="nav-link">Dự án</a>
+                <a href="#about" class="nav-link">Về tôi</a>
+                <a href="#contact" class="nav-link">Liên hệ</a>
+            </div>
+            <button class="md:hidden text-2xl text-blue-500"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="text-center animate-fadeIn">
+            <div class="inline-block px-4 py-1.5 mb-6 border border-blue-500/30 rounded-full bg-blue-500/5 text-blue-400 text-sm font-semibold tracking-widest uppercase animate-pulse">
+                Sẵn sàng cho các dự án mới
+            </div>
+            <h1 class="text-5xl md:text-8xl font-800 mb-6 leading-tight">
+                Thổi hồn vào <br> <span class="gradient-text">từng chuyển động.</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
+                Chuyên gia 3D Character Animator với đam mê tạo ra những câu chuyện giàu cảm xúc thông qua nghệ thuật quan sát và kỹ thuật chuyển động hiện đại.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#showreel" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
+                    Xem Showreel 2024
+                </a>
+                <a href="#contact" class="border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold transition-all">
+                    Liên hệ công việc
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showreel Section -->
+    <section id="showreel" class="py-24 bg-zinc-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Animation Showreel</h2>
+                <div class="h-1.5 w-24 bg-blue-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="video-container shadow-2xl border border-white/5 ring-1 ring-white/10">
+                <!-- Replace this <div> with your YouTube/Vimeo iframe -->
+                <div class="flex flex-col items-center justify-center text-center p-12 group cursor-pointer">
+                    <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-2xl ml-1 text-white"></i>
+                    </div>
+                    <p class="text-2xl font-bold mb-2">[VIDEO SHOWREEL 2024]</p>
+                    <p class="text-zinc-500 max-w-md italic">Dán mã nhúng YouTube hoặc Vimeo của bạn vào đây.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+                <div class="group p-6 bg-black/40 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-colors text-center">
+                    <div class="text-3xl font-bold text-blue-400 mb-1">05+</div>
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Năm kinh nghiệm</div>
+                </div>
+                <div class="group p-6 bg-black/40 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-colors text-center">
+                    <div class="text-3xl font-bold text-blue-400 mb-1">15+</div>
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Dự án hoàn thành</div>
+                </div>
+                <div class="group p-6 bg-black/40 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-colors text-center">
+                    <div class="text-3xl font-bold text-blue-400 mb-1">03</div>
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Giải thưởng lớn</div>
+                </div>
+                <div class="group p-6 bg-black/40 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-colors text-center">
+                    <div class="text-3xl font-bold text-blue-400 mb-1">9.5</div>
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-500 font-bold">Điểm hài lòng</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-4xl font-bold italic">Dự án <span class="text-blue-500">tiêu biểu</span></h2>
+                    <p class="text-zinc-500 mt-2">Quy trình thực hiện chi tiết từ Blocking đến Rendering.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 bg-blue-600 rounded-lg text-sm font-bold">Tất cả</button>
+                    <button class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm font-bold transition-colors">Acting</button>
+                    <button class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm font-bold transition-colors">Combat</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-zinc-900/80 rounded-2xl overflow-hidden border border-white/5">
+                    <div class="h-56 bg-zinc-800 flex items-center justify-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                        <i class="fas fa-video text-white/20 text-5xl"></i>
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity z-20"></div>
+                        <i class="fas fa-play text-white text-3xl absolute opacity-0 group-hover:opacity-100 transition-opacity z-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-500 uppercase tracking-widest">Character Acting</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Sự cố của Chú Hề</h3>
+                        <p class="text-zinc-400 text-sm mb-4 leading-relaxed">Nghiên cứu về timing và cường độ cảm xúc của nhân vật trong một tình huống bất ngờ.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-zinc-300 font-mono">Maya</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-zinc-300 font-mono">ZBrush</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-zinc-900/80 rounded-2xl overflow-hidden border border-white/5">
+                    <div class="h-56 bg-zinc-800 flex items-center justify-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                        <i class="fas fa-robot text-white/20 text-5xl"></i>
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity z-20"></div>
+                        <i class="fas fa-play text-white text-3xl absolute opacity-0 group-hover:opacity-100 transition-opacity z-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-500 uppercase tracking-widest">Combat / Mechanics</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Đấu Sĩ Robot</h3>
+                        <p class="text-zinc-400 text-sm mb-4 leading-relaxed">Xử lý trọng tâm và lực quán tính cho các va chạm vật lý của khối kim loại nặng.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-zinc-300 font-mono">Maya</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-zinc-300 font-mono">UE5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-zinc-900/80 rounded-2xl overflow-hidden border border-white/5">
+                    <div class="h-56 bg-zinc-800 flex items-center justify-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                        <i class="fas fa-comment-dots text-white/20 text-5xl"></i>
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity z-20"></div>
+                        <i class="fas fa-play text-white text-3xl absolute opacity-0 group-hover:opacity-100 transition-opacity z-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-purple-500 uppercase tracking-widest">Facial / Lip Sync</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Hội thoại kịch tính</h3>
+                        <p class="text-zinc-400 text-sm mb-4 leading-relaxed">Tập trung vào vi chuyển động của cơ mặt và khớp khẩu hình miệng theo âm thanh.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-zinc-300 font-mono">Blender</span>
+                            <span class="px-2 py-1 bg-white/5 rounded text-[10px] text-zinc-300 font-mono">Arnold</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-zinc-900/30">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative order-2 md:order-1">
+                <div class="aspect-square bg-blue-600 rounded-3xl rotate-6 absolute inset-0 -z-10 opacity-20"></div>
+                <div class="aspect-square bg-zinc-800 rounded-3xl border border-white/10 flex items-center justify-center overflow-hidden">
+                    <div class="text-center p-10">
+                        <i class="fas fa-user-circle text-8xl text-zinc-700 mb-4"></i>
+                        <p class="text-zinc-500 italic">Ảnh chân dung của bạn</p>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -right-6 p-6 bg-blue-600 rounded-2xl shadow-xl hidden lg:block">
+                    <p class="text-xs font-bold uppercase tracking-tighter">Công cụ chính</p>
+                    <p class="text-xl font-bold italic">Autodesk Maya</p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-4xl font-bold mb-8">Xin chào, tôi là một <span class="text-blue-500">Animator.</span></h2>
+                <div class="space-y-6 text-zinc-400 text-lg leading-relaxed">
+                    <p>Tôi tin rằng animation không chỉ là việc di chuyển các mô hình kỹ thuật số, mà là việc truyền đạt linh hồn và suy nghĩ thông qua chuyển động.</p>
+                    <p>Với nền tảng từ mỹ thuật tạo hình, tôi luôn cố gắng đưa tính thẩm mỹ cổ điển vào các công nghệ tiên tiến nhất như Unreal Engine và Maya Pipeline.</p>
+                </div>
+                
+                <div class="mt-10 grid grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <h4 class="font-bold text-white mb-1"><i class="fas fa-cubes text-blue-400 mr-2"></i> Kỹ thuật</h4>
+                        <p class="text-xs text-zinc-500">Keyframe, Rigging, Skinning.</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <h4 class="font-bold text-white mb-1"><i class="fas fa-paint-brush text-blue-400 mr-2"></i> Sáng tạo</h4>
+                        <p class="text-xs text-zinc-500">Storyboarding, Layout, Lighting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Bạn có dự án <span class="gradient-text">trong mơ?</span></h2>
+            <p class="text-zinc-500 mb-12 text-lg">Tôi luôn cởi mở cho những cơ hội hợp tác và dự án sáng tạo mới.</p>
+            
+            <div class="bg-zinc-900/80 backdrop-blur-xl p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-3xl text-left">
+                <form action="#" onsubmit="event.preventDefault();" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-zinc-400 uppercase tracking-widest">Họ và tên</label>
+                            <input type="text" placeholder="Nguyễn Văn A" class="w-full bg-black/50 border border-white/10 rounded-xl p-4 outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-zinc-400 uppercase tracking-widest">Email liên hệ</label>
+                            <input type="email" placeholder="example@gmail.com" class="w-full bg-black/50 border border-white/10 rounded-xl p-4 outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-zinc-400 uppercase tracking-widest">Lời nhắn</label>
+                        <textarea rows="5" placeholder="Chia sẻ ý tưởng dự án của bạn..." class="w-full bg-black/50 border border-white/10 rounded-xl p-4 outline-none focus:ring-2 focus:ring-blue-500 transition-all"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-5 rounded-xl font-bold text-lg transition-all shadow-xl shadow-blue-600/20 active:scale-95">
+                        Gửi lời nhắn ngay <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="mt-16 flex flex-wrap justify-center gap-8 text-3xl">
+                <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i class="fab fa-artstation"></i></a>
+                <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i class="fab fa-vimeo"></i></a>
+                <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Background Blur -->
+        <div class="absolute top-1/2 left-0 w-64 h-64 bg-blue-600/10 blur-[120px] rounded-full -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-purple-600/10 blur-[150px] rounded-full -z-10"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm">
+            <div class="font-800 text-white text-xl uppercase tracking-tighter">[TÊN BẠN]</div>
+            <div>&copy; 2024. Đã đăng ký bản quyền. Được xây dựng với Tailwind.</div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-blue-400 transition-colors">ArtStation</a>
+                <a href="#" class="hover:text-blue-400 transition-colors">Behance</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/95', 'py-2', 'shadow-2xl');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('bg-black/95', 'py-2', 'shadow-2xl');
+                nav.classList.add('py-4');
+            }
+        });
+
+        // Simple Fade-in Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
